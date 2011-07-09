@@ -1,0 +1,38 @@
+/**************************************************
+ * Toscanini: A Gestural MIDI Interface
+ * Written by Robby Grodin
+ * Licensed under Creative Commons BY ND 2010
+ * Conductive IO
+ * www.ConductiveIO.com
+ * RobbyGrodin@ConductiveIO.com
+ *////////////////////////////////////////////////
+
+// Instructions:
+
+ 1. Before starting Max/MSP, plug in the RFID dongle.
+ 2. When prompted to configure network, select cancel.
+ 3. Ensure that watch is in accelerometer mode (ACC). Press bottom right button to start broadcasting.
+
+For Windows Users:
+ For use in applications that utilize Toscanini, delete all the three Toscanini files (Toscanini, Toscanini.mxf, Toscanini.maxpat) and rename the Toscanini_WINDOWS files to Toscanini. The only difference between the two is that the Mac version reads from serial port a (found in watch IO), and the Windows version reads from serial port b.
+
+// A Tour of the Toscanini Interface:
+
+I/O CONTROLS
+ 1. Watch Face: Indicates that polling is turned on and the interface is listening to the watch.
+ 2. Connect/Disconnect Toggle: Turns on serial port listening.
+ 3. Clear Broadcast Buffer Button: Sometimes the bytes coming through the serial port aren’t oriented properly. This button fixes the incoming buffer. The interface runs this process at start-up, but changes in connectivity could lead to further issues. Try this if some axises are not functioning properly.
+ 4. Set MIDI Port: Select MIDI out port.
+ 
+AXIS CONTROLS
+ 5. XYZ Axis Controls:
+    5a. MIDI Channel: Select MIDI out channel.
+    5b. CC Assignment: Assign a Continuous Controller ID.
+    5c. Broadcast Toggle: Enable broadcasting for this axis. This is useful when configuring controls for DAW plugins.
+
+CALIBRATION
+ 6. Calibrate Button: This feature allows you to customize the virtual space in which you perform. After hitting the button and starting the calibration process, you will have 10 seconds in which to move your watch freely. The lowest and highest reading that each axis reports over those ten seconds will be scaled to MIDI values 0 and 127, respectively. This allows for a more personal, comfortable work flow.
+ 7. Switch to Raw Values Button: Bypasses the calibrated values and returns your virtual space to the default.
+
+GESTURE RECORDER
+ 8. Gesture Record/Length: Designate a time (in milliseconds) and hit record. The result will be a capture of all three axises, saved in a function graph. Currently the recorded movements are not implemented in any way, so it is up to you hackers to find your own use for it. The next version will have added capability in this module.
